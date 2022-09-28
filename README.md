@@ -5,6 +5,8 @@ GitHub Repo:  https://github.com/AaronVenema/weatherDashboard#readme
 Deployed app:   https://aaronvenema.github.io/weatherDashboard/
 
 ![image](https://user-images.githubusercontent.com/34764586/192907690-0a2922f9-3918-4034-a3cd-07ddfe3cf27e.png)
+![image](https://user-images.githubusercontent.com/34764586/192908639-5bf5fe44-a23e-4002-b745-9ba7101cfb5d.png)
+
 
 
 
