@@ -29,6 +29,25 @@ function renderSearchHistory (){
   }
 }
 
+function addToHistory (searchInputVal){
+  if (historyCityName.indexOf(searchInputVal) != -1){
+    return;
+  }
+  historyCityName.push(searchInputVal)
+  localStorage.setItem('search-history', JSON.stringify(historyCityName))
+  getSearchHistory();
+}
+
+
+function getSearchHistory(){
+  var savedHistory = localStorage.getItem('search-history');
+  if (savedHistory){
+    historyCityName=JSON.parse(savedHistory)
+  }
+  console.log(savedHistory)
+  console.log(historyCityName)
+  renderSearchHistory();
+}
 
 
 function handleSearchFormSubmit(event) {
@@ -40,6 +59,7 @@ function handleSearchFormSubmit(event) {
     return;
   }
   retrieve(searchInputVal);
+  addToHistory(searchInputVal);
 }
 
 
