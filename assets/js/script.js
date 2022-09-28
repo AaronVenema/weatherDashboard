@@ -62,7 +62,7 @@ function handleSearchFormSubmit(event) {
 }
 
 function retrieve(searchInputVal){
-const url = `http://api.openweathermap.org/data/2.5/forecast?q=${searchInputVal}&appid=721eb51c87bcd053bffb1681ef4d705c&units=imperial`
+const url = `https://api.openweathermap.org/data/2.5/forecast?q=${searchInputVal}&appid=721eb51c87bcd053bffb1681ef4d705c&units=imperial`
 fetch(url, {
 })
 .then(response => response.json())
