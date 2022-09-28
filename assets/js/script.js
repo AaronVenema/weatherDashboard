@@ -1,9 +1,8 @@
 var cityInput= document.getElementById("city-input")
 var searchBtn= document.getElementById("search-button")
 var clearBtn= document.getElementById("clear-button")
-var historyCont= document.querySelector("#historyCont")
+var historyCont= document.getElementById("historyCont")
 var forecast= document.getElementById("forecast")
-
 let historyCityName= []
 let weatherDays = []  
 let currDay = null
@@ -21,11 +20,11 @@ function renderSearchHistory (){
   for(let i=0; i< historyCityName.length; i++) {
     console.log(i)
     const btn = document.createElement("button");
-    btn.setAttribute("type", "button");
-    btn.setAttribute("class","btn-secondary mb-3 history-btn");
-    btn.setAttribute("data-search", historyCityName[i])
+    btn.setAttribute('type', "button");
+    btn.setAttribute('class',"btn btn-dark m-2 mb-3 rounded-pill");
+    btn.setAttribute('data-search', historyCityName[i]);
     btn.textContent= historyCityName[i];
-    addToDOM("button", historyCityName[i], historyCont)
+    historyCont.appendChild(btn);
   }
 }
 
@@ -62,16 +61,6 @@ function handleSearchFormSubmit(event) {
   addToHistory(searchInputVal);
 }
 
-
-
-
-// clearBtn.addEventListener("click",function() {
-//   searchHistory = [];
-//   renderSearchHistory();
-// })
-
-
-
 function retrieve(searchInputVal){
 const url = `http://api.openweathermap.org/data/2.5/forecast?q=${searchInputVal}&appid=721eb51c87bcd053bffb1681ef4d705c&units=imperial`
 fetch(url, {
@@ -105,7 +94,7 @@ fetch(url, {
   //   parse into object to get specific data (current day, temperature, windspeed, humidity, icon) 
 for(let i=0; i< weatherDays.length; i++) {
     const elem = document.createElement("section")
-    elem.setAttribute("class", "col m-3 forecast bg-primary text-white text-center")
+    elem.setAttribute("class", "col row m-3 forecast bg-transparent text-white text-center")
     forecast.appendChild(elem)
 
     let currentDay= moment.unix(weatherDays[i].dt).format("dddd MM/DD/YYYY")
@@ -127,6 +116,25 @@ for(let i=0; i< weatherDays.length; i++) {
     };
   })
 }
+function clearSearchHistory(){
+  historyCont.innerHTML = "";
+  forecast.innerHTML = "";
+  console.log("here")
+}
 
+
+
+function getCitySwag(name){
+  forecast.innerHTML = "";
+  retrieve(name);
+}
 // renderSearchHistory();
 searchBtn.addEventListener('click', handleSearchFormSubmit);
+clearBtn.addEventListener('click', clearSearchHistory);
+historyCont.addEventListener('click', function(event){
+  event.target.nodeName
+  console.log(event.target.nodeName)
+  if(event.target.nodeName=="BUTTON"){
+    getCitySwag(event.target.innerText)
+  }
+});

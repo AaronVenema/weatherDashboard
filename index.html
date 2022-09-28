@@ -7,21 +7,21 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/css/style.css"/>
 </head>
-<header class="text-bg-primary p-3 text-center">
+<header class="text-bg-dark p-3 text-center">
     <h1>Weather Dashboard</h1>
 </header>
   <body>
-    <section class="container-fluid">
+    <section class="d-inline-flex p-3">
       <div class="row">
         <!-- city column -->
-        <div class="col-6 bg-light">
-          <p class="search-header my-1">Search for a city</p>
+        <div class="col-6 bg-transparent m-3">
+          <p class="text-bg-dark text-center rounded-pill">Search for a city</p>
           <div class="input-group mb-12">
-            <input id="city-input" type="text" class="form-control" placeholder="Enter city name" />
+            <input id="city-input" type="text" class="form-control rounded-pill" placeholder="Enter city name" />
+            <div class="row">
+              <button class="btn btn-dark mb-3 rounded-pill" type="button" id="search-button">Search</button>
+              <button class="btn btn-dark mb-3 rounded-pill" type="button" id="clear-button">Clear history</button>
               <div id="historyCont"></div>
-            <div class="input-group-append">
-              <button class="btn btn-primary mb-3" type="button" id="search-button">Search</button>
-              <button class="btn btn-primary mb-3" type="button" id="clear-history">Clear history</button>
             </div>
           </div>
         </div>
