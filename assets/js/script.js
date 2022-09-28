@@ -102,7 +102,7 @@ for(let i=0; i< weatherDays.length; i++) {
 
     let currentIcon = weatherDays[i].weather[0].icon
     var img = document.createElement("img")
-    img.setAttribute("src", `http://openweathermap.org/img/wn/${currentIcon}@2x.png`)
+    img.setAttribute("src", `https://openweathermap.org/img/wn/${currentIcon}@2x.png`)
     elem.appendChild(img)
 
     let currentTemp = weatherDays[i].main.temp;
