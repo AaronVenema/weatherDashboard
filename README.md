@@ -1,5 +1,13 @@
 # 06 Server-Side APIs: Weather Dashboard
 
+GitHub Repo:  https://github.com/AaronVenema/weatherDashboard#readme
+
+Deployed app:   https://aaronvenema.github.io/weatherDashboard/
+
+![image](https://user-images.githubusercontent.com/34764586/192907690-0a2922f9-3918-4034-a3cd-07ddfe3cf27e.png)
+
+
+
 User is able to search by cities for a five day weather forecast by utlizing a search field with an API key that is provided. This populates a history and the five day forecast on the page. This can be cycled between via the history tab and cleared via the clear button. 
 
 ## Acceptance Criteria
